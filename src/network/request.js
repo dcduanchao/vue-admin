@@ -21,7 +21,7 @@ request.interceptors.request.use(
 )
 request.interceptors.response.use(
   response => {
-    console.log(response);
+    // console.log(response);
     const code = response.status
     if (code < 200 || code > 300) {
       Notification.error({

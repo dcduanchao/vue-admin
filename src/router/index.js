@@ -7,7 +7,8 @@ import { getToken } from 'network/cookies';
 const Login1 = () => import("views/login/Index")
 const Login = () => import("views/login/login")
 const LayIndex = () => import("views/layout/Index")
-const About = () => import("views/About.vue")
+const Role = () => import("views/system/role/Index")
+const Menu = () => import("views/system/menu/Index")
 
 Vue.use(VueRouter);
 
@@ -16,20 +17,6 @@ const routes = [
     path: "",
     redirect: "/login"
   },
-  // {
-  //   path: "/home",
-  //   name: "Home",
-  //   component: Home
-  // },
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/About.vue")
-  // },
   {
     path: "/login",
     name: "Login",
@@ -47,9 +34,14 @@ const routes = [
         component: Home
       },
       {
-        path: "/about",
-        name: "About",
-        component: About
+        path: "/system/role",
+        name: "Role",
+        component: Role
+      },
+      {
+        path: "/system/menu",
+        name: "Menu",
+        component: Menu
       },
 
     ]
@@ -71,7 +63,7 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/login') return next();
 
   const token = getToken();
- 
+
   if (!token) return next('/login');
   next()
 })
