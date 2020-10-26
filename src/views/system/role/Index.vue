@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { getRoleList, saveRole, deleteRoleById } from 'network/login';
+import { getRoleList, saveRole, deleteRoleById } from 'network/roleMenu';
 import { Message, MessageBox } from 'element-ui';
 
 export default {

@@ -6,8 +6,8 @@
         <header-sider></header-sider>
       </el-header>
       <el-container>
-        <el-aside width="200px">
-          <left-sider></left-sider>
+        <el-aside :width="openWide?'64px':'200px'">
+          <left-sider @openWidthSize='openWidthSize'></left-sider>
         </el-aside>
         <el-main>
           <router-view></router-view>
@@ -24,10 +24,22 @@ import LeftSider from './lay/LeftSider';
 import RightSider from './lay/RightSider';
 export default {
   name: 'Index',
+
+  data() {
+    return {
+      openWide: false
+    };
+  },
   components: {
     HeaderSider,
     LeftSider,
     RightSider
+  },
+
+  methods: {
+    openWidthSize(openFlag) {
+      this.openWide = openFlag;
+    }
   }
 };
 </script>
@@ -51,7 +63,6 @@ export default {
 .el-main {
   background-color: #e9eef3;
   color: #333;
-  height: 100%;
 }
 
 // .el-container:nth-child(5) .el-aside,

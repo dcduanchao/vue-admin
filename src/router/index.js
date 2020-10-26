@@ -26,7 +26,7 @@ const routes = [
     path: "/index",
     name: "Index",
     component: LayIndex,
-    redirect: "/home",
+    redirect: "/system/role",
     children: [
       {
         path: "/home",

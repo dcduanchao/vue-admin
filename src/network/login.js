@@ -17,39 +17,5 @@ export function regUser(data) {
   })
 }
 
-export function getMenuList() {
-  return request({
-    url: '/menu/list',
-    method: 'get'
-  })
-}
-
-export function getRoleList(roleName) {
-  return request({
-    url: '/system/role/list',
-    method: 'get',
-    params: {
-      roleName
-    }
-  })
-}
 
 
-export function saveRole(data) {
-  return request({
-    url: '/system/role/addoredit',
-    method: 'post',
-    data: data
-  })
-}
-
-
-export function deleteRoleById(id) {
-  return request({
-    url: '/system/role/deleted',
-    method: 'get',
-    params: {
-      id
-    }
-  })
-}
