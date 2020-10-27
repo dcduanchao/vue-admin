@@ -17,6 +17,25 @@ export function getMenuList(menuName) {
   })
 }
 
+export function saveMenu(data) {
+  return request({
+    url: '/system/menu/addoredit',
+    method: 'post',
+    data: data
+  })
+}
+
+export function deleteMenuById(id) {
+  return request({
+    url: '/system/menu/deleted',
+    method: 'get',
+    params: {
+      id
+    }
+  })
+}
+
+
 export function getRoleList(roleName) {
   return request({
     url: '/system/role/list',
@@ -46,3 +65,32 @@ export function deleteRoleById(id) {
     }
   })
 }
+
+export function getRoleAllMenu() {
+  return request({
+    url: '/system/all/role/menu',
+    method: 'get'
+  })
+}
+
+export function saveRoleMenu(data) {
+  return request({
+    url: '/system/save/role/menu',
+    method: 'post',
+    data: data
+  })
+}
+
+
+
+
+export function roleMenuList(roleId) {
+  return request({
+    url: '/system/role/menu',
+    method: 'get',
+    params: {
+      roleId
+    }
+  })
+}
+
