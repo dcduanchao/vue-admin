@@ -40,16 +40,14 @@ export default {
   > div {
     display: flex;
     align-items: center;
-    span{
+    span {
       margin-left: 15px;
     }
-    img{
-       height: 50px;
-       width: 50px;
-       border-radius: 50%;
+    img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
     }
   }
-  
-  
 }
 </style>

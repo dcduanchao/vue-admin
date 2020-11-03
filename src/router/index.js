@@ -9,6 +9,8 @@ const Login = () => import("views/login/login")
 const LayIndex = () => import("views/layout/Index")
 const Role = () => import("views/system/role/Index")
 const Menu = () => import("views/system/menu/Index")
+const User = () => import("views/user/Index")
+const UpFile = () => import("views/system/upfile/Index")
 
 Vue.use(VueRouter);
 
@@ -43,6 +45,18 @@ const routes = [
         name: "Menu",
         component: Menu
       },
+      {
+        path: "/system/file",
+        name: "UpFile",
+        component: UpFile
+      },
+      {
+        path: "/user",
+        name: "User",
+        component: User
+      },
+
+
 
     ]
   },
@@ -61,9 +75,7 @@ router.beforeEach((to, from, next) => {
   //from  跳转路径
   //next 放行
   if (to.path === '/login') return next();
-
   const token = getToken();
-
   if (!token) return next('/login');
   next()
 })

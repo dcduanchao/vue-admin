@@ -1,4 +1,6 @@
 module.exports = {
+  publicPath: '/manage/',
+
 
   lintOnSave: false,
   // 配置

@@ -4,7 +4,7 @@
       <div class="avatar_box">
         <img src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg">
       </div>
-      <el-form ref="form" :model="form" :rules="loginFromRules" label-width="0px"    class="login_from" >
+      <el-form ref="form" :model="form" :rules="loginFromRules" label-width="0px" class="login_from">
         <el-form-item prop="userName" autocomplete="off">
           <!-- iconfont  阿里图标库 -->
           <el-input v-model="form.userName" placeholder="账户" prefix-icon="iconfont icon-icon-test"></el-input>
@@ -53,11 +53,11 @@ export default {
       this.$refs[form1].resetFields();
     },
     login(form) {
-  
       this.$refs[form].validate(valid => {
         if (!valid) return;
         login(this.form).then(res => {
           setToken(res.data.token);
+          this.$store.commit('setToken');
           this.$router.push('/index');
         });
       });

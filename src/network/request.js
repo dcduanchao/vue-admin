@@ -4,15 +4,16 @@ import { Notification, MessageBox } from 'element-ui'
 import router from '@/router'
 
 import store from '@/store'
-
+import { getToken } from 'network/cookies';
 const request = Axios.create({
-  baseURL: 'http://192.168.1.199:9090',
+  baseURL: 'http://49.232.1.162:9090',
+  // baseURL: 'http://127.0.0.1:9090',
   timeout: 50000
 })
 
 request.interceptors.request.use(
   config => {
-    config.headers['Authorization'] = store.state.token
+    config.headers['Authorization'] = getToken()
     return config;
   },
   error => {
