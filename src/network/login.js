@@ -17,5 +17,13 @@ export function regUser(data) {
   })
 }
 
+export function getImageList(data) {
+  return request({
+    url: '/file/image/list',
+    method: 'post',
+    data: data
+  })
+}
+
 
 
