@@ -30,7 +30,15 @@ request.interceptors.response.use(
       })
       return Promise.reject("error")
     }
-    return response.data;
+    //下载
+    let temp = response.headers['content-disposition'];
+    if (temp) {
+      return response;
+    } else {
+      return response.data;
+    }
+
+
   },
   error => {
     let code = 0
